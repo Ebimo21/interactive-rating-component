@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./images/favicon-32x32.png" rel="icon" />
+    <script src="./app.js" type="text/javascript" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                    orange: 'hsl(25,97%,53%)',
+                    white: 'hsl(0,0%,100%)',
+                    lightGrey: 'hsl(217,12%,63%)',
+                    mediumGrey: 'hsl(216,12%,54%)',
+                    darkBlue: 'hsl(213,19%,18%)',
+                    veryDarkBlue: 'hsl(216,12%,8%)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <title>Interactive Rating Component</title>
+</head>
+<body>
+    <main>
+        <div class="">
+            <div  class=" flex items-center justify-center h-screen bg-black text-white">
+                <div id="rating-board" class=" bg-veryDarkBlue w-[375px] m-auto p-8 rounded-2xl">
+                    <div>
+                        <span class="p-3 bg-darkBlue rounded-full w-10 h-10 inline-block">
+                            <img src="./images/icon-star.svg" alt="star-rating" />
+                        </span>
+                    </div>
+                    <h1 class="text-2xl my-4">How did we do?</h1>
+                    <p class="text-lightGrey">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+
+                    <div class="text-lightGrey  font-bold mt-8 mb-6 flex items-center justify-between text-center">
+                        <input type="radio" id="one" name="rating" class="hidden rating peer/one" data-value="1" />
+                        <label for="one" class="p-3 bg-darkBlue rating rounded-full w-12 peer-checked/one:text-white peer-checked/one:bg-lightGrey hover:bg-orange hover:text-white h-12 inline-blcok">1</label>
+                        <input type="radio" id="two" name="rating" class="hidden rating peer/two" data-value="2" />
+                        <label for="two" class="p-3 bg-darkBlue rounded-full w-12 peer-checked/two:text-white peer-checked/two:bg-lightGrey hover:bg-orange hover:text-white h-12 inline-block">2</label>
+                        <input type="radio" id="three" name="rating" class="hidden rating peer/three" data-value="3" />
+                        <label for="three" class="p-3 bg-darkBlue rounded-full w-12 peer-checked/three:text-white peer-checked/three:bg-lightGrey hover:bg-orange hover:text-white h-12 inline-block">3</label>
+                        <input type="radio" id="four" name="rating" class="hidden rating peer/four" data-value="4"/>
+                        <label for="four" class="p-3 bg-darkBlue rounded-full w-12 peer-checked/four:text-white peer-checked/four:bg-lightGrey hover:bg-orange hover:text-white h-12 inline-block">4</label>
+                        <input type="radio" id="five" name="rating" class="hidden rating peer/five" data-value="5"/>
+                        <label for="five" class="p-3 bg-darkBlue rounded-full w-12 peer-checked/five:text-white peer-checked/five:bg-lightGrey hover:bg-orange hover:text-white h-12 inline-block">5</label>
+                    </div>
+
+                    <button id="submit" class="p-2 font-bold w-full uppercase rounded-3xl bg-orange outline-none hover:bg-white hover:text-orange">Submit</button>
+                </div>
+                <div id="success-board" class="hidden bg-veryDarkBlue w-[375px] text-center m-auto py-8 px-4 rounded-2xl z-20">
+                    <div class="flex flex-col gap-4 flex-wrap items-center justify-center">
+                        <div>
+                            <img src="./images/illustration-thank-you.svg" alt="successful review" />
+                        </div>
+                        
+                        <p class="text-orange px-3 py-1 bg-orange bg-opacity-5 rounded-3xl text-opacity-60 text-sm  ">You selected <span id="ratingScore"></span> out of 5</p>
+
+                        <p class="font-bold text-2xl">Thank You!</p>
+
+                        <div>                            
+                            <div class="text-sm text-mediumGrey">
+                                <p>We appreciate you taking the time to give a rating.</p>
+                                <p>If you ever need more support, dont hesistate to get in touch!</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            
+        </div>
+    </main>
+</body>
+</html>
